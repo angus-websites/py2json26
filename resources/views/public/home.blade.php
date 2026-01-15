@@ -1,4 +1,4 @@
-<x-layouts.public title="Bud | Boilerplate for Laravel Applications">
+<x-layouts.public title="Py2Json | Convert Python Dictionaries to JSON">
     <x-page-container>
         <h2 class="mb-2 text-lg font-medium text-heading">Features</h2>
         <ul class="max-w-md space-y-1 text-body list-disc list-inside">

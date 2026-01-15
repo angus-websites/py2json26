@@ -1,7 +1,7 @@
 services:
   app:
-    image: bud
-    container_name: bud-app
+    image: py2json26
+    container_name: py2json-app
     build:
       context: .
       dockerfile: Dockerfile
