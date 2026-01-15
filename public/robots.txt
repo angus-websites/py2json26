@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /livewire/
+Disallow: /flux/
+Disallow: /storage/
+Disallow: /admin/
+
+Sitemap: https://example.com/sitemap.xml
