@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "angusgoody/bud-lite",
+    "name": "angusgoody/py2json26",
     "version": "0.0.1",
     "type": "project",
     "description": "A lightweight Laravel starter kit.",
