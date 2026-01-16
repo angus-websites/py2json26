@@ -17,7 +17,7 @@ new class extends Component {
     public function convert(ConverterService $converterService): void
     {
         $this->validate();
-        
+
         try {
             $this->output = $converterService->convertPythonToJson($this->pydict);
         } catch (InvalidDictException) {
