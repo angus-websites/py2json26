@@ -54,7 +54,7 @@ new class extends Component {
                 </flux:callout.text>
             @endif
             <x-slot name="actions">
-                <flux:button wire:click="clear">Clear input</flux:button>
+                <flux:button variant="filled" wire:click="clear">Clear input</flux:button>
             </x-slot>
         </flux:callout>
     @endif
