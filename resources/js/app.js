@@ -15,7 +15,8 @@ document.addEventListener('alpine:init', () => {
             }
 
             try {
-                await navigator.clipboard.writeText(subject.trim())
+                const text = typeof subject?.trim === "function" ? subject.trim() : subject;
+                await navigator.clipboard.writeText(text);
             } catch (error) {
                 console.error('Clipboard error:', error)
                 Flux.toast('Failed to copy to clipboard.', {
