@@ -6,7 +6,7 @@ new class extends Component
 {
     public string $pydict = '';
 
-    public function submit(): void
+    public function convert(): void
     {
         // Form submission logic here
     }
@@ -14,7 +14,7 @@ new class extends Component
 ?>
 
 <div>
-    <form wire:submit.prevent="submit">
+    <form wire:submit.prevent="convert">
 
         <!-- Content Field -->
         <flux:field class="mb-4">
