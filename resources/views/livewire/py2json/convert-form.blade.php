@@ -10,8 +10,14 @@ new class extends Component {
     public string $pydict = '';
     public string $output = '';
 
+    protected array $rules = [
+        'pydict' => 'required|string|max:10000000',
+    ];
+
     public function convert(ConverterService $converterService): void
     {
+        $this->validate();
+        
         try {
             $this->output = $converterService->convertPythonToJson($this->pydict);
         } catch (InvalidDictException) {
@@ -29,6 +35,12 @@ new class extends Component {
             session()->flash('error', 'An unexpected error occurred');
             return;
         }
+    }
+
+    public function clear(): void
+    {
+        $this->pydict = '';
+        $this->output = '';
     }
 }
 ?>
@@ -71,26 +83,39 @@ new class extends Component {
                     <flux:label>Converted JSON</flux:label>
                     <flux:textarea
                         readonly
+                        class="font-mono"
                         rows="6"
                     >{{ $output }}</flux:textarea>
                 </flux:field>
 
-                <!-- Copy Button -->
-                <flux:button
-                    x-data="{ copied: false }"
-                    x-on:click="$clipboard($wire.entangle('output'));copied = true; setTimeout(() => copied = false, 2000);"
-                >
-                    <flux:icon.clipboard
-                        variant="outline"
-                        x-show="!copied"
-                    />
-                    <flux:icon.clipboard-document-check
-                        variant="outline"
-                        x-cloak
-                        x-show="copied"
-                    />
-                    <span x-text="copied ? 'Copied' : 'Copy'"></span>
-                </flux:button>
+                <div class="flex flex-row justify-between space-x-4">
+                    <!-- Copy button -->
+                    <flux:button
+                        class="w-full"
+                        variant="danger"
+                        wire:click="clear"
+                    >
+                        Reset
+                    </flux:button>
+
+                    <flux:button
+                        class="w-full"
+                        x-data="{ copied: false }"
+                        x-on:click="$clipboard($wire.entangle('output'));copied = true; setTimeout(() => copied = false, 2000);"
+                    >
+                        <flux:icon.clipboard
+                            variant="outline"
+                            x-show="!copied"
+                        />
+                        <flux:icon.clipboard-document-check
+                            variant="outline"
+                            x-cloak
+                            x-show="copied"
+                        />
+                        <span x-text="copied ? 'Copied' : 'Copy'"></span>
+                    </flux:button>
+                </div>
+
             </div>
         @endif
     </div>
