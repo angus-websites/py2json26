@@ -44,7 +44,6 @@ RUN apk add --no-cache \
 
 RUN install-php-extensions \
     pcntl \
-    pdo_mysql \
     mbstring \
     zip \
     intl
