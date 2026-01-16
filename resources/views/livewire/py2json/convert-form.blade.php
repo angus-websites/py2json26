@@ -47,12 +47,15 @@ new class extends Component {
 
 <div>
     @if (session()->has('error'))
-        <flux:callout class="mb-4" variant="danger" icon="x-circle" :heading="session('error')">
+        <flux:callout inline class="mb-4" variant="danger" icon="x-circle" :heading="session('error')">
             @if (session()->has('details'))
                 <flux:callout.text>
                     {{ session('details') }}
                 </flux:callout.text>
             @endif
+            <x-slot name="actions">
+                <flux:button wire:click="clear">Clear input</flux:button>
+            </x-slot>
         </flux:callout>
     @endif
     <div class="space-y-8">
