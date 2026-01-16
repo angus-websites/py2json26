@@ -3,7 +3,7 @@
     "name": "angusgoody/py2json26",
     "version": "0.0.2",
     "type": "project",
-    "description": "A lightweight Laravel starter kit.",
+    "description": "Convert Python scripts to JSON format.",
     "keywords": [
         "laravel",
         "framework"
