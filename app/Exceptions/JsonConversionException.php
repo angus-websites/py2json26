@@ -2,6 +2,4 @@
 
 namespace App\Exceptions;
 
-class JsonConversionException extends \Exception
-{
-}
+class JsonConversionException extends \Exception {}

@@ -2,6 +2,4 @@
 
 namespace App\Exceptions;
 
-class InvalidDictException extends \Exception
-{
-}
+class InvalidDictException extends \Exception {}

@@ -9,12 +9,11 @@ use Symfony\Component\Process\Process;
 
 class ConverterService
 {
-
     /**
      * Convert Python-like data structure to JSON-compatible PHP array.
-     * @param string $pythonData
-     * @param bool $pretty
+     *
      * @return string JSON string
+     *
      * @throws InvalidDictException
      * @throws JsonConversionException
      */
@@ -27,17 +26,18 @@ class ConverterService
         $process->run();
 
         // Check if the process was successful
-        if (!$process->isSuccessful()) {
+        if (! $process->isSuccessful()) {
             $error = trim($process->getErrorOutput());
             $exitCode = $process->getExitCode();
             throw match ($exitCode) {
-                2 => new InvalidDictException("Invalid Python dictionary"),
-                3 => new JsonConversionException("This object cannot be converted to JSON"),
-                4 => new Exception("Unknown JSON error: " . $error),
-                default => new Exception("Unexpected Python error: " . $error),
+                2 => new InvalidDictException('Invalid Python dictionary'),
+                3 => new JsonConversionException('This object cannot be converted to JSON'),
+                4 => new Exception('Unknown JSON error: '.$error),
+                default => new Exception('Unexpected Python error: '.$error),
             };
         }
         $out = $process->getOutput();
+
         // Encode and Decode again to pretty print
         return json_encode(json_decode($process->getOutput(), false), $pretty ? JSON_PRETTY_PRINT : 0);
     }

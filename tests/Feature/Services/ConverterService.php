@@ -1,11 +1,9 @@
 <?php
 
 use App\Services\ConverterService;
-use Illuminate\Support\Str;
-use Mockery\Mock;
 
 beforeEach(function () {
-    $this->service = new ConverterService();
+    $this->service = new ConverterService;
 });
 
 it('can convert a basic python dict', function () {
@@ -35,7 +33,6 @@ it('throws error when invalid dict passed', function () {
     $dict = "{(1, 2): (3, 4), 'number'";
     $this->service->convertPythonToJson($dict, pretty: false);
 })->throws(App\Exceptions\InvalidDictException::class);
-
 
 it('rejects code injection attempts', function () {
     $dict = "__import__('os').system('rm -rf /temp')";
@@ -76,9 +73,8 @@ it('throws on invalid escape sequences', function () {
     $this->service->convertPythonToJson($dict);
 })->throws(App\Exceptions\InvalidDictException::class);
 
-
 it('converts empty dict', function () {
-    $dict = "{}";
+    $dict = '{}';
     $json = $this->service->convertPythonToJson($dict);
-    $this->assertEquals("{}", $json);
+    $this->assertEquals('{}', $json);
 });
