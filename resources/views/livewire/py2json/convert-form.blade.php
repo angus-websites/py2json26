@@ -101,7 +101,7 @@ new class extends Component {
                     <flux:button
                         class="w-full"
                         x-data="{ copied: false }"
-                        x-on:click="$clipboard($wire.entangle('output'));copied = true; setTimeout(() => copied = false, 2000);"
+                        x-on:click="$clipboard($wire.output);copied = true; setTimeout(() => copied = false, 2000);"
                     >
                         <flux:icon.clipboard
                             variant="outline"

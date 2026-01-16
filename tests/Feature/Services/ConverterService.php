@@ -78,3 +78,9 @@ it('converts empty dict', function () {
     $json = $this->service->convertPythonToJson($dict);
     $this->assertEquals('{}', $json);
 });
+
+it('converts empty array', function () {
+    $dict = '[]';
+    $json = $this->service->convertPythonToJson($dict);
+    $this->assertEquals('[]', $json);
+});
