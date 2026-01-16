@@ -36,7 +36,6 @@ class ConverterService
                 default => new Exception('Unexpected Python error: '.$error),
             };
         }
-        $out = $process->getOutput();
 
         // Encode and Decode again to pretty print
         return json_encode(json_decode($process->getOutput(), false), $pretty ? JSON_PRETTY_PRINT : 0);

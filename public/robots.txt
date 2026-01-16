@@ -4,4 +4,4 @@ Disallow: /flux/
 Disallow: /storage/
 Disallow: /admin/
 
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://py2json.com/sitemap.xml
