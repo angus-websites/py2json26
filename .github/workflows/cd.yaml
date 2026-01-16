@@ -7,7 +7,7 @@ on:
 #      - main
 
 env:
-  IMAGE_NAME: bud
+  IMAGE_NAME: py2json26
   REGISTRY: ghcr.io
 
 concurrency:

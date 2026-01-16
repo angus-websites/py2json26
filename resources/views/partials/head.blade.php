@@ -4,9 +4,9 @@
 {{--Meta--}}
 <title>@yield('title', config('app.name'))</title>
 <meta name="description"
-      content="@yield('description', 'Bud is a simple boilerplate for quickly building Laravel applications')"/>
+      content="@yield('description', 'Py2Json, easily convert python dictionaries to JSON')"/>
 <meta property="og:image" content="{{ url('assets/images/core/ogimage.jpg') }}">
-<meta name="keywords" content="@yield('keywords', 'Bud')"/>
+<meta name="keywords" content="@yield('keywords', 'python', 'json')"/>
 
 {{--Icons--}}
 <link rel="icon" type="image/png" href="/assets/images/core/favicon-96x96.png" sizes="96x96"/>

@@ -3,9 +3,9 @@
   <img alt="WishWaffle Logo" src="public/assets/images/logo/logo.png" width="200">
 </picture>
 
-# Bud-Lite
+# Py2Json26
 
-Bud-Lite is a lightweight boilerplate for Laravel-based applications. Bud-Lite is built with...
+Py2Json26 is an app to convert Python dictionaries to JSON format. Py2Json26 is built with...
 
 - Laravel 12
 - TailwindCSS v4
@@ -41,7 +41,7 @@ Bud-Lite is a lightweight boilerplate for Laravel-based applications. Bud-Lite i
 
 ## Paid Dependencies
 
-Bud-Lite uses [FluxUi](https://fluxui.dev/) pro components for the user interface. This is a paid package and a license is
+Py2Json uses [FluxUi](https://fluxui.dev/) pro components for the user interface. This is a paid package and a license is
 required to install the components from their private repository.
 
 If you have a license you can create an auth.json file with your credentials.
@@ -162,16 +162,14 @@ This workflow expects the following secrets to be set in the `Production` enviro
 1. `COMPOSER_AUTH` - The contents of your `auth.json` file for installing paid dependencies, note this secret MUST be a
    single line JSON string otherwise the workflow will fail.
 2. `CAP_SERVER_URL` - The base URL of your CapRover server e.g `https://captain.yourdomain.com`
-3. `CAP_APP_NAME` - The name of the app on your CapRover server e.g `bud-lite`
+3. `CAP_APP_NAME` - The name of the app on your CapRover server e.g `py2json`
 4. `CAP_APP_TOKEN` - The token for your CapRover app
 
 ## Testing
 
-Bud-Lite uses PestPHP for testing. Tests are split into Feature and Unit tests located in the `tests/Feature` and
+Py2Json uses PestPHP for testing. Tests are split into Feature and Unit tests located in the `tests/Feature` and
 `tests/Unit` directories respectively.
 
-Bud-Lite also makes use of Pest's snapshot testing capabilities for UI components. Snapshots are stored in the
-`tests/.pest` directory.
 
 ### Running all tests
 
@@ -179,11 +177,6 @@ Bud-Lite also makes use of Pest's snapshot testing capabilities for UI component
 php artisan test --parallel
 ```
 
-### Running tests and updating snapshots
-
-```bash
-php artisan test --update-snapshots
-```
 
 ## Useful notes and commands
 
@@ -195,10 +188,10 @@ Build the docker image with secret auth.json manually ...
 DOCKER_BUILDKIT=1
 docker build \
   --secret id=composer_auth,src=auth.json \
-  -t bud-lite .
+  -t py2json .
 ```
 
 ### Trusted proxies
 
-Bud-Lite is currently configured to trust all proxies by default. If you need to restrict this, you can modify the
+Py2Json is currently configured to trust all proxies by default. If you need to restrict this, you can modify the
 `bootstrap/app.php` `trustProxies` method.

@@ -1,6 +1,6 @@
 {
-  "name": "Bud",
-  "short_name": "Bud",
+  "name": "Py2Json",
+  "short_name": "Py2Json",
   "icons": [
     {
       "src": "/assets/images/core/web-app-manifest-192x192.png",

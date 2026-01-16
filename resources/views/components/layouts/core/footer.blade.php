@@ -24,10 +24,7 @@
             </div>
             <p x-data="{}" class="mt-8 text-base text-gray-500 md:order-1 md:mt-0 text-center">
                 &copy; {{ date('Y') }}
-                <a
-                    href="/admin"
-                    class="cursor-pointer hover:text-accent"
-                >Bud</a> | Designed by Angus Goody
+                Py2Json | Designed by Angus Goody
             </p>
         </div>
     </x-container>
