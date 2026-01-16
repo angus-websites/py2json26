@@ -2,9 +2,9 @@ name: CI Pipeline
 
 on:
   workflow_dispatch:
-#  pull_request:
-#    branches:
-#      - 'main'
+  pull_request:
+    branches:
+      - 'main'
 
 
 concurrency:
@@ -36,7 +36,7 @@ jobs:
     needs: composer-check
     if: ${{ needs.composer-check.result == 'success' }}
     runs-on: ubuntu-latest
-    environment: Testing
+    environment: testing
 
     steps:
       - name: Checkout repository

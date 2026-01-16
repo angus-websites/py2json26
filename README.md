@@ -195,3 +195,7 @@ docker build \
 
 Py2Json is currently configured to trust all proxies by default. If you need to restrict this, you can modify the
 `bootstrap/app.php` `trustProxies` method.
+
+## TODO
+
+- Install python in Docker image
