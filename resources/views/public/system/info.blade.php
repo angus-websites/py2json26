@@ -1,4 +1,4 @@
-<x-layouts.minimal title="Bud | System info">
+<x-layouts.minimal title="Py2Json | System info">
     <x-page-container>
         <flux:card class="space-y-6" >
             <div class="px-4 sm:px-0">
