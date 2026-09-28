@@ -5,6 +5,8 @@ php artisan route:clear
 php artisan config:clear
 php artisan view:clear
 
+# Clear version cache
+php artisan app:clear-version-cache
 
 echo "Starting worker Supervisor..."
 # Start Supervisor in the background
