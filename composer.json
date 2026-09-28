@@ -1,14 +1,13 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
     "name": "angusgoody/py2json26",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "type": "project",
     "description": "Convert Python scripts to JSON format.",
     "keywords": [
         "laravel",
         "framework"
     ],
-    "license": "MIT",
     "require": {
         "php": "^8.2",
         "laravel/framework": "^12.0",
