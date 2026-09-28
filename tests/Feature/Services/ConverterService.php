@@ -1,5 +1,7 @@
 <?php
 
+use App\Exceptions\InvalidDictException;
+use App\Exceptions\JsonConversionException;
 use App\Services\ConverterService;
 
 beforeEach(function () {
@@ -27,17 +29,17 @@ it('can convert tuples', function () {
 it('throws error when tuples are keys', function () {
     $dict = "{(1, 2): (3, 4), 'number': 42}";
     $this->service->convertPythonToJson($dict, pretty: false);
-})->throws(App\Exceptions\JsonConversionException::class);
+})->throws(JsonConversionException::class);
 
 it('throws error when invalid dict passed', function () {
     $dict = "{(1, 2): (3, 4), 'number'";
     $this->service->convertPythonToJson($dict, pretty: false);
-})->throws(App\Exceptions\InvalidDictException::class);
+})->throws(InvalidDictException::class);
 
 it('rejects code injection attempts', function () {
     $dict = "__import__('os').system('rm -rf /temp')";
     $this->service->convertPythonToJson($dict);
-})->throws(App\Exceptions\InvalidDictException::class);
+})->throws(InvalidDictException::class);
 
 it('converts nested dicts', function () {
     $dict = "{'a': {'b': {'c': 1}}}";
@@ -66,12 +68,12 @@ it('converts None to null', function () {
 it('throws on unsupported types like sets', function () {
     $dict = "{'items': {1, 2, 3}}";
     $this->service->convertPythonToJson($dict);
-})->throws(App\Exceptions\JsonConversionException::class);
+})->throws(JsonConversionException::class);
 
 it('throws on invalid escape sequences', function () {
     $dict = "{'key': '\\xZZ'}";
     $this->service->convertPythonToJson($dict);
-})->throws(App\Exceptions\InvalidDictException::class);
+})->throws(InvalidDictException::class);
 
 it('converts empty dict', function () {
     $dict = '{}';
